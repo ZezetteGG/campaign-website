@@ -5,7 +5,7 @@
   <table>
     <tr>
       <td>
-        {% for topic in page_obj %}
+        {% for topic in topics %}
           <a href="{% url 'learning_logs:topic' topic.id %}"><div class="journal_links">{{ topic }}
           </div></a>
         {% empty %}
