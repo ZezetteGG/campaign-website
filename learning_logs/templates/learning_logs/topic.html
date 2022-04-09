@@ -1,0 +1,38 @@
+{% extends "learning_logs/base.html" %}
+
+{% block content %}
+
+
+  <table>
+    <tr>
+	  <td class="journal_table_content">
+        <div class="journal_table_name">
+		  <div style="float:right;">
+		    <div class="create_new_link">
+			  <a href="{% url 'learning_logs:new_entry' topic.id %}">+ new entry</a>
+			</div>
+		  </div>
+		  {{ topic }}
+		</div>
+        {% for entry in entries %}
+        <div class="date_box">{{ entry.date_added|date:'M d, Y' }}</div>
+        <div class="entry_box">{{ entry.text|linebreaks }}
+        <div class="edit_entry_box"><a href="{% url 'learning_logs:edit_entry' entry.id %}">edit entry</a></div></div>
+        
+        
+        
+
+  {% empty %}
+
+      There are no entries for this character journal yet.
+
+  {% endfor %}
+        
+      </td>
+      <td class="index_table_chandelier" valign=top><center><img src="https://i.imgur.com/dInVEGh.png"></center></td>
+    </tr>
+  </table>  
+
+
+  
+  {% endblock content %}

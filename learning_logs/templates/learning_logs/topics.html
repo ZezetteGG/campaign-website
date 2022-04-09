@@ -1,0 +1,22 @@
+{% extends "learning_logs/base.html" %}
+
+{% block content %}
+
+
+  <table>
+    <tr>
+	  <td>
+        {% for topic in topics %}
+          <a href="{% url 'learning_logs:topic' topic.id %}"><div class="journal_links">{{ topic }}
+          </div></a>
+        {% empty %}
+          <div class="journal_links_none">No topics have been added yet.</div>
+        {% endfor %}
+        <br><br>
+        <center><span class="create_new_link"><a href="{% url 'learning_logs:new_topic' %}">+ new character journal</a></span></center>
+      </td>
+      <td class="index_table_chandelier" valign=top><center><img src="https://i.imgur.com/dInVEGh.png"></center></td>
+    </tr>
+  </table>  
+{% endblock content %}
+	

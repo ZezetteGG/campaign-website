@@ -1,0 +1,475 @@
+{% load bootstrap3 %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>Cord's Campaign</title>
+	
+	{% bootstrap_css %}
+	
+	<style>
+	  body {
+        background-color:#262626;
+        color:#BBBBBB;
+        font-family:verdana;
+       
+      }
+      
+      a {
+	    text-decoration:none !important;
+	  }
+      
+      button {
+	    background-color:#1B1B1B;
+	    border:0px;
+	    padding:10px;
+	    font-size:11px;
+	    
+	  }
+	  
+	  input, textarea {
+		background-color:#1B1B1B;
+		border:0px;
+		
+      }
+      
+      
+      .logbar {
+		position:sticky;
+		width:100%;
+		background-color:#1B1B1B;
+		text-align:right;
+		padding:10px;
+		
+	  }  
+	  
+	  .logbar a {
+	    color:#FFFFFF;
+	  }
+	  
+	  .wrap {
+		width:800px;
+	    padding-top:50px;
+	    padding-bottom:50px;  
+	    
+	  }
+     
+      .banner {
+		z-index:500;
+		position:relative;
+	    background-color:#1B1B1B;
+	    font-family:rockwell;
+	    font-size:60px;
+	    text-align:left;
+	    padding:150px;
+     
+	  }
+	  
+	  .chandelier {
+        background-image:url(https://i.imgur.com/d2l3xpw.png);
+        background-color:#BBBBBB;
+        float:left;
+        width:64px;
+        height:64px;
+      
+      }
+      
+      .playerwrap {
+		z-index:1;
+		position:relative;
+		top:-150px;
+		width:100%;
+		margin-bottom:-130px;
+			
+		  
+      }
+      
+	  
+	  .playercard1 {
+		z-index:2;
+		position:relative;
+		top:0px;
+		height:200px;
+		width:150px;
+		background-color:#BBBBBB;
+		background-image:url(https://i.imgur.com/6FDuzOF.jpg);
+		color:#BBBBBB;
+		margin-right:2px;
+		margin-left:2px;
+		padding:6px;
+		-webkit-transition: all .4s linear;
+        -moz-transition: all .4s linear;
+        -ms-transition: all .4s linear;
+        -o-transition: all .4s linear;
+	    transition: all .4s linear;
+		  
+	  }
+	  
+	  .playercard2 {
+		z-index:2;
+		position:relative;
+		top:0px;
+		height:200px;
+		width:150px;
+		background-color:#BBBBBB;
+		background-image:url(https://i.imgur.com/0F5ycVB.jpg);
+		color:#BBBBBB;
+		margin-right:2px;
+		margin-left:2px;
+		padding:6px;
+		-webkit-transition: all .4s linear;
+        -moz-transition: all .4s linear;
+        -ms-transition: all .4s linear;
+        -o-transition: all .4s linear;
+	    transition: all .4s linear;
+		  
+	  }
+	  
+	  .playercard3 {
+		z-index:2;
+		position:relative;
+		top:0px;
+		height:200px;
+		width:150px;
+		background-color:#BBBBBB;
+		background-image:url(https://i.imgur.com/p34bbTG.jpg);
+		color:#BBBBBB;
+		margin-right:2px;
+		margin-left:2px;
+		padding:6px;
+		-webkit-transition: all .4s linear;
+        -moz-transition: all .4s linear;
+        -ms-transition: all .4s linear;
+        -o-transition: all .4s linear;
+	    transition: all .4s linear;
+		  
+	  }
+	  
+	  .playercard4 {
+		z-index:2;
+		position:relative;
+		top:0px;
+		height:200px;
+		width:150px;
+		background-image:url(https://i.imgur.com/XQG4Hfx.jpg);
+		color:#BBBBBB;
+		margin-right:2px;
+		margin-left:2px;
+		padding:6px;
+		-webkit-transition: all .4s linear;
+        -moz-transition: all .4s linear;
+        -ms-transition: all .4s linear;
+        -o-transition: all .4s linear;
+	    transition: all .4s linear;
+		  
+	  }
+	  
+	  .playercard5 {
+		z-index:2;
+		position:relative;
+		top:0px;
+		height:200px;
+		width:150px;
+		background-color:#BBBBBB;
+		background-image:url(https://i.imgur.com/e7Ytdry.jpg);
+		color:#BBBBBB;
+		margin-right:2px;
+		margin-left:2px;
+		padding:6px;
+		-webkit-transition: all .4s linear;
+        -moz-transition: all .4s linear;
+        -ms-transition: all .4s linear;
+        -o-transition: all .4s linear;
+	    transition: all .4s linear;
+		  
+	  }
+
+	  
+	  .character_about {
+		background-color:#1B1B1B;
+		opacity:.7;
+		padding:10px;
+		font-size:11px;
+		
+      }
+	  
+
+	  
+	  .character_name {
+		position:absolute;
+		bottom:0;
+		left:0;
+		background-color:#1B1B1B;
+		font-family:rockwell;
+		opacity:.7;
+		padding:10px;
+
+	  }
+	  
+	  
+
+     
+	  .playercard1:hover, .playercard2:hover, .playercard3:hover, .playercard4:hover, .playercard5:hover {
+		z-index:1;
+		position:relative;
+		top:150px;
+	    -webkit-transition: all .4s linear;
+        -moz-transition: all .4s linear;
+        -ms-transition: all .4s linear;
+        -o-transition: all .4s linear;
+	    transition: all .4s linear;
+	    
+	  }
+	  
+	  .mainlink {
+        width:400px;
+        background-color:#1B1B1B;
+        font-family:rockwell;
+        font-size:20px;
+        padding:10px;
+        text-align:center;
+        color:#BBBBBB !important;
+        -webkit-transition: all .4s linear;
+        -moz-transition: all .4s linear;
+        -ms-transition: all .4s linear;
+        -o-transition: all .4s linear;
+	    transition: all .4s linear;
+      }
+      
+
+	  
+	  .mainlink:hover {
+		background-color:#BBBBBB;
+		color:#1B1B1B !important;
+		-webkit-transition: all .4s linear;
+        -moz-transition: all .4s linear;
+        -ms-transition: all .4s linear;
+        -o-transition: all .4s linear;
+	    transition: all .4s linear;
+	  }
+	
+      .index_table_chandelier {
+		background-color:#1B1B1B;
+		width:400px;
+		
+	  }
+	  
+	  .index_table_content {
+		padding-left:20px;
+		text-align:justify;
+		font-size:11px;
+		
+	  }
+	  
+	  .index_table_content div {
+		border-bottom:1px #BBBBBB solid;
+		font-size:20px;
+		font-family:rockwell;
+		margin-bottom:10px;
+		
+		
+	  }
+	  
+	  .index_table_content a {
+		color:#FFFFFF;
+      }
+      
+      .journal_links_none {
+		text-align:right;
+		width:400px;
+		background-color:#1B1B1B;
+		padding:10px;
+		font-family:rockwell;
+		margin-bottom:10px;
+	  }
+      
+      .journal_links {
+		text-align:right;
+		width:400px;
+		background-color:#1B1B1B;
+		padding:10px;
+		font-family:rockwell;
+		margin-bottom:10px;
+		text-transform: capitalize;
+		color:#BBBBBB !important;
+		border-right:0px solid #e0cc64;
+		-webkit-transition: all .4s linear;
+        -moz-transition: all .4s linear;
+        -ms-transition: all .4s linear;
+        -o-transition: all .4s linear;
+	    transition: all .4s linear;
+	  }
+	  
+	  .journal_links a {
+		color:#BBBBBB !important;
+		
+	  }
+	  
+
+	   	  
+	  .journal_links:hover {
+		border-right:64px solid #cb0a29;
+	  	-webkit-transition: all .4s linear;
+        -moz-transition: all .4s linear;
+        -ms-transition: all .4s linear;
+        -o-transition: all .4s linear;
+	    transition: all .4s linear;
+	  }	
+	  
+	  .create_new_link {
+		background-color:#1B1B1B;
+		padding:10px;
+		margin-top:10px;
+		font-size:11px;
+		font-family:verdana;
+	  }
+	  
+	  .create_new_link a {
+		color:#BBBBBB;
+	  }
+	  
+	  .journal_table_content {
+		padding-right:20px;
+		text-align:justify;
+		font-size:11px;
+		width:400px;
+		
+	  }
+	  
+	  .journal_table_name {
+		border-bottom:1px #BBBBBB solid;
+		font-size:20px;
+		font-family:rockwell;
+		margin-bottom:10px;
+	  }
+	  
+	  .date_box {
+		
+	  }
+		
+	  .entry_box {
+		background-color:#1B1B1B;
+		padding:10px;
+		margin-bottom:20px;
+	  }
+	  
+	  .edit_entry_box {
+		float:right;
+		background-color:#262626; 
+		padding:5px; 
+		border:1px solid #1B1B1B;
+	  }
+		
+	  .edit_entry_box a {
+		color:#BBBBBB;
+		
+	  } 
+		  
+	</style>
+    
+    {% bootstrap_javascript %}
+	
+  </head>
+  
+  <body>
+	
+  <!-- Fixed Login Bar with Guest Greeting -->	 
+   
+  <div class="logbar">
+    {% if user.is_authenticated %}
+      <div style="float:left;">Hello, {{ user.username }}</div>
+      <a href="{% url 'users:logout' %}">log out</a>
+    {% else %}
+      <div style="float:left;">Hello, guest!</div>
+      <a href="{% url 'users:register' %}">register</a> or 
+      <a href="{% url 'users:login' %}">log in</a>
+    {% endif %}
+  </div>
+  
+	  
+  <center>
+	
+	<!-- Banner -->
+
+    <div class="wrap">
+	  <div class="banner">
+		<div class="chandelier"></div>
+		Curse of Strahd
+	  </div>
+      
+      <!-- Moving Character Cards -->
+
+      <div class="playerwrap">
+        <table>
+		  <tr>
+		    <td class="player">
+				
+			  <div class="playercard1">
+				  <div class="character_about">A ten to fifteen word description 
+				    about a character goes in here.</div>
+				  <div class="character_name">Alder</div>
+              </div>
+              
+		    </td>
+		    <td class="player">
+			  	
+			  <div class="playercard2">
+				  <div class="character_about">A ten to fifteen word description 
+				    about a character goes in here.</div>
+				  <div class="character_name">Lila</div>
+              </div>
+            
+		    </td>
+		    <td class="player">
+			  	
+			  <div class="playercard3">
+				  <div class="character_about">A man of faith trying to
+				  atone for the sins of his dark past.</div>
+				  <div class="character_name">Victor</div>
+              </div>
+            
+		    </td>
+		    <td class="player">
+			  	
+			  <div class="playercard4">
+				  <div class="character_about">A ten to fifteen word description 
+				    about a character goes in here.</div>
+				  <div class="character_name">Zidan</div>
+              </div>
+            
+		    </td>
+		    <td class="player">
+			  	
+			  <div class="playercard5">
+				  <div class="character_about">The boy turned man, then 
+				  more-than-man, shouldering dreams of a forgotten age. </div>
+				  <div class="character_name">Oliver</div>
+              </div>
+            
+		    </td>
+		  </tr>
+        </table>
+      </div>
+ 
+      <table style="margin-bottom:20px;">
+	    <tr>
+		  <td>
+            <a href="{% url 'learning_logs:index' %}"><div class="mainlink">Campaign About</div></a>
+          </td> 
+          <td>
+            <a href="{% url 'learning_logs:topics' %}"><div class="mainlink">Character Journals</div></a>
+          </td>
+        </tr>
+      </table>
+
+      {% block content %}{% endblock content %}
+    </div>
+  </center>
+
+  </body>
+
+</html>
