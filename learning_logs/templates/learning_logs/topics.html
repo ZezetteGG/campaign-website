@@ -2,11 +2,10 @@
 
 {% block content %}
 
-
   <table>
     <tr>
-	  <td>
-        {% for topic in topics %}
+      <td>
+        {% for topic in page_obj %}
           <a href="{% url 'learning_logs:topic' topic.id %}"><div class="journal_links">{{ topic }}
           </div></a>
         {% empty %}
@@ -18,5 +17,6 @@
       <td class="index_table_chandelier" valign=top><center><img src="https://i.imgur.com/dInVEGh.png"></center></td>
     </tr>
   </table>  
+
 {% endblock content %}
 	
