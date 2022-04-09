@@ -110,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # Set trusted origins
-CSRF_TRUSTED_ORIGINS = ["https://curse-of-strahd.herokuapp.com/"]
+CSRF_TRUSTED_ORIGINS = ["https://curse-of-strahd.herokuapp.com",]
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
