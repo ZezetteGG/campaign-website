@@ -155,7 +155,7 @@ if cwd == '/app' or cwd[:4] == '/tmp':
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'http')
     
     # Allow all host headers.
-    ALLOWED_HOSTS = ['https://curse-of-strahd.herokuapp.com']
+    ALLOWED_HOSTS = ['*']
     
     DEBUG = False
     
