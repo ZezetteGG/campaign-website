@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-lfk^!h(p3-$q&ry0w1d+*i8hu#kus$zwvx=ib4yy$98t219aa*
 DEBUG = False
 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://curse-of-strahd.herokuapp.com']
 
 
 # Application definition
